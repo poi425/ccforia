@@ -1,0 +1,128 @@
+:root{
+  --bg:#1b1b1b;         /* 연한 검정 */
+  --panel:#202020;
+  --line:#3a3a3a;       /* 연한 회색 줄 */
+  --text:#cfcfcf;       /* 연한 회색 본문 */
+  --time:#9a9a9a;       /* 회색 시간 */
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Pretendard Variable", Pretendard, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 22px; /* 좌우 여백 충분 */
+}
+
+.top h1{
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:700;
+}
+.sub{
+  margin:0 0 18px;
+  font-size:12px;
+  color:var(--time);
+  line-height:1.6;
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid #2a2a2a;
+  border-radius:14px;
+  padding:16px;
+  margin:14px 0;
+}
+
+.drop{
+  border:1px dashed #444;
+  border-radius:14px;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+}
+.drop input[type="file"]{
+  width: 210px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+@media (max-width:860px){
+  .row{ grid-template-columns: 1fr; }
+}
+
+h2{
+  margin:0 0 8px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.tabs{
+  border:1px solid #2a2a2a;
+  border-radius:12px;
+  padding:10px;
+  min-height:54px;
+}
+.tabs.empty{ color:var(--time); }
+.tab-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 4px;
+  border-bottom:1px solid #2b2b2b;
+}
+.tab-item:last-child{ border-bottom:none; }
+.tab-item small{ color:var(--time); }
+
+textarea{
+  width:100%;
+  min-height:120px;
+  background:#161616;
+  color:var(--text);
+  border:1px solid #2a2a2a;
+  border-radius:12px;
+  padding:10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size:12px;
+  line-height:1.5;
+}
+#out{ min-height:260px; }
+
+.hint{
+  margin-top:8px;
+  font-size:11px;
+  color:var(--time);
+  line-height:1.6;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+button{
+  background:#2b2b2b;
+  border:1px solid #3a3a3a;
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+}
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
