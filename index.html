@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CCFOLIA 로그 → 티스토리 백업</title>
+
+  <!-- Pretendard (CDN) -->
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>코코포리아 로그 백업</h1>
+      <p class="sub">
+        코코포리아에서 “로그 출력/전 로그 출력”으로 받은 HTML 파일을 넣으면,
+        탭 선택 후 티스토리용으로 정리해준다.
+      </p>
+    </header>
+
+    <section class="panel">
+      <div class="drop" id="drop">
+        <div>
+          <strong>여기로 로그 HTML 드래그&드롭</strong>
+          <div class="hint">또는 파일 선택</div>
+        </div>
+        <input id="file" type="file" accept=".html,.htm" multiple />
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h2>탭 선택</h2>
+          <div id="tabs" class="tabs empty">아직 불러온 파일이 없다.</div>
+        </div>
+
+        <div class="col">
+          <h2>닉네임 색상 맵(선택)</h2>
+          <textarea id="colorMap" spellcheck="false">{}</textarea>
+          <div class="hint">
+            예: {"KP":"#caa0ff","서언":"#9ad0ff"}<br />
+            ※ 본문/시간은 회색 고정, 닉네임만 색 반영
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="build">출력 만들기</button>
+        <button id="copy" disabled>복사</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>결과(티스토리에 붙여넣기)</h2>
+      <textarea id="out" spellcheck="false" placeholder="여기에 결과가 생성된다."></textarea>
+      <div class="hint">
+        티스토리 에디터가 HTML을 어떻게 처리하는지에 따라,
+        “HTML 모드”/“서식 유지”로 붙여넣어야 깔끔하게 나온다.
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
